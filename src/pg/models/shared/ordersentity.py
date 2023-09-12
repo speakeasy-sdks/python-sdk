@@ -16,7 +16,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class OrdersEntity:
-    r"""OK"""
     cf_order_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cf_order_id'), 'exclude': lambda f: f is None }})
     customer_details: Optional[shared_customerdetails.CustomerDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customer_details'), 'exclude': lambda f: f is None }})
     r"""The customer details that are necessary. Note that you can pass dummy details if your use case does not require the customer details."""

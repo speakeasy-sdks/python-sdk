@@ -29,36 +29,23 @@ req = operations.CreateOrderRequest(
         order_note='Test order',
         order_splits=[
             shared.VendorSplit(
-                amount=3843.82,
-                percentage=4375.87,
-                vendor_id='magnam',
-            ),
-            shared.VendorSplit(
-                amount=8917.73,
-                percentage=567.13,
-                vendor_id='delectus',
-            ),
-            shared.VendorSplit(
-                amount=2726.56,
-                percentage=3834.41,
-                vendor_id='molestiae',
+                amount=6458.94,
+                percentage=3843.82,
+                vendor_id='iure',
             ),
         ],
         order_tags={
-            "placeat": 'voluptatum',
-            "iusto": 'excepturi',
-            "nisi": 'recusandae',
-            "temporibus": 'ab',
+            "magnam": 'debitis',
         },
         terminal=shared.TerminalDetails(
-            terminal_id='quis',
-            terminal_phone_no='veritatis',
-            terminal_type='deserunt',
+            terminal_id='ipsa',
+            terminal_phone_no='delectus',
+            terminal_type='tempora',
         ),
     ),
-    x_api_version='perferendis',
-    x_client_id='ipsam',
-    x_client_secret='repellendus',
+    x_api_version='suscipit',
+    x_client_id='molestiae',
+    x_client_secret='minus',
 )
 
 res = s.orders.create_order(req)

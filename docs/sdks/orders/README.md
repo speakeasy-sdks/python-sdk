@@ -20,55 +20,42 @@ s = pg.Pg()
 req = operations.CreateOrderRequest(
     create_order_backend_request=shared.CreateOrderBackendRequest(
         customer_details=shared.CustomerDetails(
-            customer_bank_account_number='sapiente',
-            customer_bank_code='quo',
-            customer_bank_ifsc='odit',
-            customer_email='at',
-            customer_id='at',
-            customer_phone='maiores',
+            customer_bank_account_number='placeat',
+            customer_bank_code='voluptatum',
+            customer_bank_ifsc='iusto',
+            customer_email='excepturi',
+            customer_id='nisi',
+            customer_phone='recusandae',
         ),
         order_amount=10.15,
         order_currency='INR',
         order_expiry_time='2021-07-29T00:00:00Z',
-        order_id='molestiae',
+        order_id='temporibus',
         order_meta=shared.OrderMeta(
-            notify_url='quod',
-            payment_methods='quod',
-            return_url='esse',
+            notify_url='ab',
+            payment_methods='quis',
+            return_url='veritatis',
         ),
         order_note='Test order',
         order_splits=[
             shared.VendorSplit(
-                amount=7805.29,
-                percentage=6788.8,
-                vendor_id='dicta',
-            ),
-            shared.VendorSplit(
-                amount=7206.33,
-                percentage=6399.21,
-                vendor_id='occaecati',
-            ),
-            shared.VendorSplit(
-                amount=1433.53,
-                percentage=5373.73,
-                vendor_id='hic',
+                amount=6481.72,
+                percentage=202.18,
+                vendor_id='ipsam',
             ),
         ],
         order_tags={
-            "totam": 'beatae',
-            "commodi": 'molestiae',
-            "modi": 'qui',
-            "impedit": 'cum',
+            "repellendus": 'sapiente',
         },
         terminal=shared.TerminalDetails(
-            terminal_id='esse',
-            terminal_phone_no='ipsum',
-            terminal_type='excepturi',
+            terminal_id='quo',
+            terminal_phone_no='odit',
+            terminal_type='at',
         ),
     ),
-    x_api_version='aspernatur',
-    x_client_id='perferendis',
-    x_client_secret='ad',
+    x_api_version='at',
+    x_client_id='maiores',
+    x_client_secret='molestiae',
 )
 
 res = s.orders.create_order(req)
@@ -104,23 +91,18 @@ s = pg.Pg()
 req = operations.OrderPayRequest(
     order_pay_request=shared.OrderPayRequest(
         offer_id='faa6cc05-d1e2-401c-b0cf-0c9db3ff0f0b',
-        payment_method=shared.CardEMIPaymentMethod(
-            emi=shared.CardEMI(
-                card_alias='sed',
-                card_bank_name=shared.CardEMICardBankName.YES,
-                card_cvv='dolor',
-                card_expiry_mm='natus',
-                card_expiry_yy='laboriosam',
-                card_holder_name='hic',
-                card_number='saepe',
-                channel='fuga',
-                emi_tenure=449950,
+        payment_method=shared.CardlessEMIPaymentMethod(
+            cardless_emi=shared.CardlessEMI(
+                channel='quod',
+                emi_tenure=461479,
+                phone='861-765-1597 x5144',
+                provider=shared.CardlessEMIProvider.ZESTMONEY,
             ),
         ),
         payment_session_id='session__CvcEmNKDkmERQrxnx39ibhJ3Ii034pjc8ZVxf3qcgEXCWlgDDlHRgz2XYZCqpajDQSXMMtCusPgOIxYP2LZx0-05p39gC2Vgmq1RAj--gcn',
         save_instrument=False,
     ),
-    x_api_version='corporis',
+    x_api_version='qui',
 )
 
 res = s.orders.order_pay(req)
