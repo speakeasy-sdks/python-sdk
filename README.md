@@ -70,7 +70,7 @@ if res.orders_entity is not None:
 ## Available Resources and Operations
 
 
-### [orders](docs/sdks/orders/README.md)
+### [Orders](docs/sdks/orders/README.md)
 
 * [create_order](docs/sdks/orders/README.md#create_order) - Create Order
 * [order_pay](docs/sdks/orders/README.md#order_pay) - Order Pay
