@@ -27,7 +27,9 @@ class CreateOrderRequest:
 @dataclasses.dataclass
 class CreateOrderResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     api_error: Optional[shared_apierror.APIError] = dataclasses.field(default=None)
     r"""API related Errors"""
     authentication_error: Optional[shared_authenticationerror.AuthenticationError] = dataclasses.field(default=None)
@@ -40,5 +42,6 @@ class CreateOrderResponse:
     rate_limit_error: Optional[shared_ratelimiterror.RateLimitError] = dataclasses.field(default=None)
     r"""Rate Limit Error"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

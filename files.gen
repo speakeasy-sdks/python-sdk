@@ -54,8 +54,6 @@ src/pg/models/shared/__init__.py
 src/pg/models/callbacks/createorder.py
 src/pg/models/callbacks/__init__.py
 src/pg/models/errors/__init__.py
-docs/sdks/pg/README.md
-docs/sdks/orders/README.md
 USAGE.md
 docs/models/operations/createorderrequest.md
 docs/models/operations/createorderresponse.md
@@ -115,4 +113,6 @@ docs/models/shared/paylaterpaymentmethod.md
 docs/models/shared/paylaterprovider.md
 docs/models/shared/paylater.md
 docs/models/callbacks/createorderpaymentwebhookresponse.md
+docs/sdks/pg/README.md
+docs/sdks/orders/README.md
 .gitattributes

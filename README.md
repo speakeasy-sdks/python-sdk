@@ -10,8 +10,6 @@ pip install git+https://github.com/speakeasy-sdks/python-sdk.git
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import pg
 from pg.models import callbacks, operations, shared
@@ -21,42 +19,42 @@ s = pg.Pg()
 req = operations.CreateOrderRequest(
     create_order_backend_request=shared.CreateOrderBackendRequest(
         customer_details=shared.CustomerDetails(
-            customer_bank_account_number='corrupti',
-            customer_bank_code='provident',
-            customer_bank_ifsc='distinctio',
-            customer_email='quibusdam',
-            customer_id='unde',
-            customer_phone='nulla',
+            customer_bank_account_number='placeat',
+            customer_bank_code='voluptatum',
+            customer_bank_ifsc='iusto',
+            customer_email='excepturi',
+            customer_id='nisi',
+            customer_phone='recusandae',
         ),
         order_amount=10.15,
         order_currency='INR',
         order_expiry_time='2021-07-29T00:00:00Z',
-        order_id='corrupti',
+        order_id='temporibus',
         order_meta=shared.OrderMeta(
-            notify_url='illum',
-            payment_methods='vel',
-            return_url='error',
+            notify_url='ab',
+            payment_methods='quis',
+            return_url='veritatis',
         ),
         order_note='Test order',
         order_splits=[
             shared.VendorSplit(
-                amount=6458.94,
-                percentage=3843.82,
-                vendor_id='iure',
+                amount=6481.72,
+                percentage=202.18,
+                vendor_id='ipsam',
             ),
         ],
         order_tags={
-            "magnam": 'debitis',
+            "repellendus": 'sapiente',
         },
         terminal=shared.TerminalDetails(
-            terminal_id='ipsa',
-            terminal_phone_no='delectus',
-            terminal_type='tempora',
+            terminal_id='quo',
+            terminal_phone_no='odit',
+            terminal_type='at',
         ),
     ),
-    x_api_version='suscipit',
-    x_client_id='molestiae',
-    x_client_secret='minus',
+    x_api_version='at',
+    x_client_id='maiores',
+    x_client_secret='molestiae',
 )
 
 res = s.orders.create_order(req)
@@ -75,6 +73,32 @@ if res.orders_entity is not None:
 * [create_order](docs/sdks/orders/README.md#create_order) - Create Order
 * [order_pay](docs/sdks/orders/README.md#order_pay) - Order Pay
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `Next` method that can be called to pull down the next group of results. If the
+return value of `Next` is `None`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+
+
+<!-- End Pagination -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 

@@ -20,42 +20,42 @@ s = pg.Pg()
 req = operations.CreateOrderRequest(
     create_order_backend_request=shared.CreateOrderBackendRequest(
         customer_details=shared.CustomerDetails(
-            customer_bank_account_number='placeat',
-            customer_bank_code='voluptatum',
-            customer_bank_ifsc='iusto',
-            customer_email='excepturi',
-            customer_id='nisi',
-            customer_phone='recusandae',
+            customer_bank_account_number='quod',
+            customer_bank_code='quod',
+            customer_bank_ifsc='esse',
+            customer_email='totam',
+            customer_id='porro',
+            customer_phone='dolorum',
         ),
         order_amount=10.15,
         order_currency='INR',
         order_expiry_time='2021-07-29T00:00:00Z',
-        order_id='temporibus',
+        order_id='dicta',
         order_meta=shared.OrderMeta(
-            notify_url='ab',
-            payment_methods='quis',
-            return_url='veritatis',
+            notify_url='nam',
+            payment_methods='officia',
+            return_url='occaecati',
         ),
         order_note='Test order',
         order_splits=[
             shared.VendorSplit(
-                amount=6481.72,
-                percentage=202.18,
-                vendor_id='ipsam',
+                amount=1433.53,
+                percentage=5373.73,
+                vendor_id='hic',
             ),
         ],
         order_tags={
-            "repellendus": 'sapiente',
+            "optio": 'totam',
         },
         terminal=shared.TerminalDetails(
-            terminal_id='quo',
-            terminal_phone_no='odit',
-            terminal_type='at',
+            terminal_id='beatae',
+            terminal_phone_no='commodi',
+            terminal_type='molestiae',
         ),
     ),
-    x_api_version='at',
-    x_client_id='maiores',
-    x_client_secret='molestiae',
+    x_api_version='modi',
+    x_client_id='qui',
+    x_client_secret='impedit',
 )
 
 res = s.orders.create_order(req)
@@ -93,16 +93,16 @@ req = operations.OrderPayRequest(
         offer_id='faa6cc05-d1e2-401c-b0cf-0c9db3ff0f0b',
         payment_method=shared.CardlessEMIPaymentMethod(
             cardless_emi=shared.CardlessEMI(
-                channel='quod',
-                emi_tenure=461479,
-                phone='861-765-1597 x5144',
-                provider=shared.CardlessEMIProvider.ZESTMONEY,
+                channel='esse',
+                emi_tenure=216550,
+                phone='(303) 616-2639 x9643',
+                provider=shared.CardlessEMIProvider.CASHE,
             ),
         ),
         payment_session_id='session__CvcEmNKDkmERQrxnx39ibhJ3Ii034pjc8ZVxf3qcgEXCWlgDDlHRgz2XYZCqpajDQSXMMtCusPgOIxYP2LZx0-05p39gC2Vgmq1RAj--gcn',
         save_instrument=False,
     ),
-    x_api_version='qui',
+    x_api_version='iure',
 )
 
 res = s.orders.order_pay(req)

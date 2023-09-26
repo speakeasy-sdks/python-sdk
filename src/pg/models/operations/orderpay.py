@@ -24,7 +24,9 @@ class OrderPayRequest:
 @dataclasses.dataclass
 class OrderPayResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     api_error: Optional[shared_apierror.APIError] = dataclasses.field(default=None)
     r"""API related Errors"""
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
@@ -35,5 +37,6 @@ class OrderPayResponse:
     rate_limit_error: Optional[shared_ratelimiterror.RateLimitError] = dataclasses.field(default=None)
     r"""Either ports issue or too many requests"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
