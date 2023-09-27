@@ -2,16 +2,29 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import apppaymentmethod as shared_apppaymentmethod
+from ..shared import cardemipaymentmethod as shared_cardemipaymentmethod
+from ..shared import cardlessemipaymentmethod as shared_cardlessemipaymentmethod
+from ..shared import cardpaymentmethod as shared_cardpaymentmethod
+from ..shared import netbankingpaymentmethod as shared_netbankingpaymentmethod
+from ..shared import paylaterpaymentmethod as shared_paylaterpaymentmethod
+from ..shared import upipaymentmethod as shared_upipaymentmethod
 from dataclasses_json import Undefined, dataclass_json
 from pg import utils
-from typing import Any, Optional
+from typing import Optional, Union
+
+
+
+@dataclasses.dataclass
+class OrderPayRequestPaymentMethod:
+    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class OrderPayRequest:
-    payment_method: Any = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_method') }})
+    payment_method: Union[shared_cardpaymentmethod.CardPaymentMethod, shared_upipaymentmethod.UPIPaymentMethod, shared_netbankingpaymentmethod.NetBankingPaymentMethod, shared_apppaymentmethod.AppPaymentMethod, shared_cardemipaymentmethod.CardEMIPaymentMethod, shared_cardlessemipaymentmethod.CardlessEMIPaymentMethod, shared_paylaterpaymentmethod.PaylaterPaymentMethod] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_method') }})
     payment_session_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_session_id') }})
     offer_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('offer_id'), 'exclude': lambda f: f is None }})
     r"""This is required if any offers needs to be applied to the order."""

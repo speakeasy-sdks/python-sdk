@@ -1,4 +1,5 @@
 # Orders
+(*orders*)
 
 ### Available Operations
 
@@ -91,18 +92,11 @@ s = pg.Pg()
 req = operations.OrderPayRequest(
     order_pay_request=shared.OrderPayRequest(
         offer_id='faa6cc05-d1e2-401c-b0cf-0c9db3ff0f0b',
-        payment_method=shared.CardlessEMIPaymentMethod(
-            cardless_emi=shared.CardlessEMI(
-                channel='esse',
-                emi_tenure=216550,
-                phone='(303) 616-2639 x9643',
-                provider=shared.CardlessEMIProvider.CASHE,
-            ),
-        ),
+        payment_method=[],
         payment_session_id='session__CvcEmNKDkmERQrxnx39ibhJ3Ii034pjc8ZVxf3qcgEXCWlgDDlHRgz2XYZCqpajDQSXMMtCusPgOIxYP2LZx0-05p39gC2Vgmq1RAj--gcn',
         save_instrument=False,
     ),
-    x_api_version='iure',
+    x_api_version='cum',
 )
 
 res = s.orders.order_pay(req)

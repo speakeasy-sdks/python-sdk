@@ -89,6 +89,7 @@ docs/models/shared/orderpayresponsepaymentmethod.md
 docs/models/shared/orderpayresponse.md
 docs/models/shared/orderpaydatapayload.md
 docs/models/shared/orderpaydata.md
+docs/models/shared/orderpayrequestpaymentmethod.md
 docs/models/shared/orderpayrequest.md
 docs/models/shared/cardpaymentmethod.md
 docs/models/shared/cardcardbankname.md
