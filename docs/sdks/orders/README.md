@@ -21,42 +21,42 @@ s = pg.Pg()
 req = operations.CreateOrderRequest(
     create_order_backend_request=shared.CreateOrderBackendRequest(
         customer_details=shared.CustomerDetails(
-            customer_bank_account_number='quod',
-            customer_bank_code='quod',
-            customer_bank_ifsc='esse',
-            customer_email='totam',
-            customer_id='porro',
-            customer_phone='dolorum',
+            customer_bank_account_number='North double',
+            customer_bank_code='spherical woman burdensome',
+            customer_bank_ifsc='interfaces Smart',
+            customer_email='Doyle brown toast',
+            customer_id='Bedfordshire',
+            customer_phone='Mohr North',
         ),
         order_amount=10.15,
         order_currency='INR',
         order_expiry_time='2021-07-29T00:00:00Z',
-        order_id='dicta',
+        order_id='deploy South',
         order_meta=shared.OrderMeta(
-            notify_url='nam',
-            payment_methods='officia',
-            return_url='occaecati',
+            notify_url='Road male Berkshire',
+            payment_methods='parsing female middleware',
+            return_url='Bedfordshire navigating',
         ),
         order_note='Test order',
         order_splits=[
             shared.VendorSplit(
-                amount=1433.53,
-                percentage=5373.73,
-                vendor_id='hic',
+                amount=5942.72,
+                percentage=3302.96,
+                vendor_id='dearly remount',
             ),
         ],
         order_tags={
-            "optio": 'totam',
+            "expedita": 'South',
         },
         terminal=shared.TerminalDetails(
-            terminal_id='beatae',
-            terminal_phone_no='commodi',
-            terminal_type='molestiae',
+            terminal_id='Southwest',
+            terminal_phone_no='violet Chips Porsche',
+            terminal_type='mobile',
         ),
     ),
-    x_api_version='modi',
-    x_client_id='qui',
-    x_client_secret='impedit',
+    x_api_version='ROI bypassing vero',
+    x_client_id='Solutions Ferrari Accountability',
+    x_client_secret='Folk ampere',
 )
 
 res = s.orders.create_order(req)
@@ -96,7 +96,7 @@ req = operations.OrderPayRequest(
         payment_session_id='session__CvcEmNKDkmERQrxnx39ibhJ3Ii034pjc8ZVxf3qcgEXCWlgDDlHRgz2XYZCqpajDQSXMMtCusPgOIxYP2LZx0-05p39gC2Vgmq1RAj--gcn',
         save_instrument=False,
     ),
-    x_api_version='cum',
+    x_api_version='Cheese compressing Islands',
 )
 
 res = s.orders.order_pay(req)

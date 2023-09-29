@@ -3,13 +3,8 @@
 from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
 from pg import utils
-from typing import Optional
-
-class RateLimitErrorType(str, Enum):
-    r"""rate_limit_error"""
-    RATE_LIMIT_ERROR = 'rate_limit_error'
+from typing import Final, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -18,7 +13,7 @@ class RateLimitErrorType(str, Enum):
 class RateLimitError:
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    type: Optional[RateLimitErrorType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    TYPE: Final[Optional[str]] = dataclasses.field(default='rate_limit_error', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""rate_limit_error"""
     
 

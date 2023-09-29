@@ -34,7 +34,7 @@ class OrderPayResponsePaymentMethod(str, Enum):
 
 @dataclasses.dataclass
 class OrderPayResponse:
-    action: Optional[OrderPayResponseAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action'), 'exclude': lambda f: f is None }})
+    action: Optional[OrderPayResponseAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action') }})
     r"""One of [\\"link\\", \\"custom\\", \\"form\\"]"""
     cf_payment_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cf_payment_id'), 'exclude': lambda f: f is None }})
     r"""Payment identifier created by Cashfree"""
