@@ -47,6 +47,7 @@ res = s.orders.create_order(req)
 
 if res.orders_entity is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
 
