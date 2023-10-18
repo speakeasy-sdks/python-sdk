@@ -8,8 +8,7 @@ from ..shared import errorresponse as shared_errorresponse
 from ..shared import orderpayrequest as shared_orderpayrequest
 from ..shared import orderpayresponse as shared_orderpayresponse
 from ..shared import ratelimiterror as shared_ratelimiterror
-from typing import Optional
-
+from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -17,7 +16,6 @@ class OrderPayRequest:
     x_api_version: str = dataclasses.field(metadata={'header': { 'field_name': 'x-api-version', 'style': 'simple', 'explode': False }})
     order_pay_request: Optional[shared_orderpayrequest.OrderPayRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 
@@ -31,7 +29,7 @@ class OrderPayResponse:
     r"""API related Errors"""
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
     r"""Any bad or invalid request will lead to following error object"""
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     order_pay_response: Optional[shared_orderpayresponse.OrderPayResponse] = dataclasses.field(default=None)
     r"""OK"""
     rate_limit_error: Optional[shared_ratelimiterror.RateLimitError] = dataclasses.field(default=None)

@@ -7,14 +7,12 @@ from pg import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class OrderPayDataPayload:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class OrderPayData:
     content_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('content_type'), 'exclude': lambda f: f is None }})

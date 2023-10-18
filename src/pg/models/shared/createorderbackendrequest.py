@@ -8,11 +8,10 @@ from ..shared import terminaldetails as shared_terminaldetails
 from ..shared import vendorsplit as shared_vendorsplit
 from dataclasses_json import Undefined, dataclass_json
 from pg import utils
-from typing import Optional
+from typing import Dict, List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateOrderBackendRequest:
     customer_details: shared_customerdetails.CustomerDetails = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customer_details') }})
@@ -28,8 +27,8 @@ class CreateOrderBackendRequest:
     order_meta: Optional[shared_ordermeta.OrderMeta] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order_meta'), 'exclude': lambda f: f is None }})
     order_note: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order_note'), 'exclude': lambda f: f is None }})
     r"""Order note for reference."""
-    order_splits: Optional[list[shared_vendorsplit.VendorSplit]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order_splits'), 'exclude': lambda f: f is None }})
-    order_tags: Optional[dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order_tags'), 'exclude': lambda f: f is None }})
+    order_splits: Optional[List[shared_vendorsplit.VendorSplit]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order_splits'), 'exclude': lambda f: f is None }})
+    order_tags: Optional[Dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order_tags'), 'exclude': lambda f: f is None }})
     r"""Custom Tags which can be passed for an order. A maximum of 6 tags can be added"""
     terminal: Optional[shared_terminaldetails.TerminalDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('terminal'), 'exclude': lambda f: f is None }})
     

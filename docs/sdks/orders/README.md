@@ -21,8 +21,8 @@ s = pg.Pg()
 req = operations.CreateOrderRequest(
     create_order_backend_request=shared.CreateOrderBackendRequest(
         customer_details=shared.CustomerDetails(
-            customer_id='North double',
-            customer_phone='spherical woman burdensome',
+            customer_id='Solutions',
+            customer_phone='Pizza',
         ),
         order_amount=10.15,
         order_currency='INR',
@@ -33,16 +33,16 @@ req = operations.CreateOrderRequest(
             shared.VendorSplit(),
         ],
         order_tags={
-            "temporibus": 'SUV',
+            "Salad": 'spherical',
         },
         terminal=shared.TerminalDetails(
-            terminal_id='overriding',
-            terminal_phone_no='Southeast Southwest but',
-            terminal_type='Recycled',
+            terminal_id='woman',
+            terminal_phone_no='burdensome',
+            terminal_type='temporibus',
         ),
     ),
-    x_client_id='Orchestrator',
-    x_client_secret='implement',
+    x_client_id='SUV',
+    x_client_secret='Doyle',
 )
 
 res = s.orders.create_order(req)
@@ -84,7 +84,7 @@ req = operations.OrderPayRequest(
         ),
         payment_session_id='session__CvcEmNKDkmERQrxnx39ibhJ3Ii034pjc8ZVxf3qcgEXCWlgDDlHRgz2XYZCqpajDQSXMMtCusPgOIxYP2LZx0-05p39gC2Vgmq1RAj--gcn',
     ),
-    x_api_version='volt',
+    x_api_version='Cheese',
 )
 
 res = s.orders.order_pay(req)

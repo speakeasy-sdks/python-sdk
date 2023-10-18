@@ -14,14 +14,12 @@ from pg import utils
 from typing import Optional, Union
 
 
-
 @dataclasses.dataclass
 class OrderPayRequestPaymentMethod:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class OrderPayRequest:
     payment_method: Union[shared_cardpaymentmethod.CardPaymentMethod, shared_upipaymentmethod.UPIPaymentMethod, shared_netbankingpaymentmethod.NetBankingPaymentMethod, shared_apppaymentmethod.AppPaymentMethod, shared_cardemipaymentmethod.CardEMIPaymentMethod, shared_cardlessemipaymentmethod.CardlessEMIPaymentMethod, shared_paylaterpaymentmethod.PaylaterPaymentMethod] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_method') }})

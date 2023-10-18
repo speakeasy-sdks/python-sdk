@@ -9,8 +9,7 @@ from ..shared import createorderbackendrequest as shared_createorderbackendreque
 from ..shared import errorresponse as shared_errorresponse
 from ..shared import ordersentity as shared_ordersentity
 from ..shared import ratelimiterror as shared_ratelimiterror
-from typing import Optional
-
+from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -20,7 +19,6 @@ class CreateOrderRequest:
     create_order_backend_request: Optional[shared_createorderbackendrequest.CreateOrderBackendRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     x_api_version: Optional[str] = dataclasses.field(default='2022-09-01', metadata={'header': { 'field_name': 'x-api-version', 'style': 'simple', 'explode': False }})
     
-
 
 
 
@@ -36,7 +34,7 @@ class CreateOrderResponse:
     r"""Authentication Error"""
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
     r"""Any bad or invalid request will lead to following error object"""
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     orders_entity: Optional[shared_ordersentity.OrdersEntity] = dataclasses.field(default=None)
     r"""OK"""
     rate_limit_error: Optional[shared_ratelimiterror.RateLimitError] = dataclasses.field(default=None)

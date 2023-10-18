@@ -16,7 +16,6 @@ class UpiChannel(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Upi:
     channel: UpiChannel = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('channel') }})

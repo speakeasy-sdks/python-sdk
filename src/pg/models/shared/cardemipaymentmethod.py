@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CardEMIPaymentMethod:
     emi: Optional[shared_cardemi.CardEMI] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emi'), 'exclude': lambda f: f is None }})

@@ -8,7 +8,6 @@ from pg import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UPIPaymentMethod:
     upi: shared_upi.Upi = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upi') }})
