@@ -19,8 +19,8 @@ s = pg.Pg()
 req = operations.CreateOrderRequest(
     create_order_backend_request=shared.CreateOrderBackendRequest(
         customer_details=shared.CustomerDetails(
-            customer_id='Solutions',
-            customer_phone='Pizza',
+            customer_id='string',
+            customer_phone='string',
         ),
         order_amount=10.15,
         order_currency='INR',
@@ -31,16 +31,16 @@ req = operations.CreateOrderRequest(
             shared.VendorSplit(),
         ],
         order_tags={
-            "Salad": 'spherical',
+            "key": 'string',
         },
         terminal=shared.TerminalDetails(
-            terminal_id='woman',
-            terminal_phone_no='burdensome',
-            terminal_type='temporibus',
+            terminal_id='string',
+            terminal_phone_no='string',
+            terminal_type='string',
         ),
     ),
-    x_client_id='SUV',
-    x_client_secret='Doyle',
+    x_client_id='string',
+    x_client_secret='string',
 )
 
 res = s.orders.create_order(req)
