@@ -7,17 +7,20 @@ from enum import Enum
 from pg import utils
 from typing import Optional
 
-class RateLimitErrorType(str, Enum):
-    r"""rate_limit_error"""
-    RATE_LIMIT_ERROR = 'rate_limit_error'
+class SchemasType(str, Enum):
+    r"""authentication_error"""
+    AUTHENTICATION_ERROR = 'authentication_error'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
-class RateLimitError:
+class AuthenticationError(Exception):
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    type: Optional[RateLimitErrorType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
-    r"""rate_limit_error"""
+    type: Optional[SchemasType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    r"""authentication_error"""
     
 
+    def __str__(self) -> str:
+        return utils.marshal_json(self)

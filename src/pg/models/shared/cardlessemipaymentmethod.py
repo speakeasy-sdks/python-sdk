@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import cardlessemi as shared_cardlessemi
+from .cardlessemi import CardlessEMI
 from dataclasses_json import Undefined, dataclass_json
 from pg import utils
 
@@ -10,6 +10,6 @@ from pg import utils
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CardlessEMIPaymentMethod:
-    cardless_emi: shared_cardlessemi.CardlessEMI = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cardless_emi') }})
+    cardless_emi: CardlessEMI = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cardless_emi') }})
     
 

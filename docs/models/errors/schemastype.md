@@ -1,4 +1,4 @@
-# AuthenticationErrorType
+# SchemasType
 
 authentication_error
 

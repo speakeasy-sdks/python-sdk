@@ -3,12 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import apierror as shared_apierror
-from ..shared import authenticationerror as shared_authenticationerror
-from ..shared import createorderbackendrequest as shared_createorderbackendrequest
-from ..shared import errorresponse as shared_errorresponse
-from ..shared import ordersentity as shared_ordersentity
-from ..shared import ratelimiterror as shared_ratelimiterror
+from ...models.shared import createorderbackendrequest as shared_createorderbackendrequest
+from ...models.shared import errorresponse as shared_errorresponse
+from ...models.shared import ordersentity as shared_ordersentity
 from typing import Dict, List, Optional
 
 
@@ -28,17 +25,11 @@ class CreateOrderResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    api_error: Optional[shared_apierror.APIError] = dataclasses.field(default=None)
-    r"""API related Errors"""
-    authentication_error: Optional[shared_authenticationerror.AuthenticationError] = dataclasses.field(default=None)
-    r"""Authentication Error"""
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
     r"""Any bad or invalid request will lead to following error object"""
     headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     orders_entity: Optional[shared_ordersentity.OrdersEntity] = dataclasses.field(default=None)
     r"""OK"""
-    rate_limit_error: Optional[shared_ratelimiterror.RateLimitError] = dataclasses.field(default=None)
-    r"""Rate Limit Error"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

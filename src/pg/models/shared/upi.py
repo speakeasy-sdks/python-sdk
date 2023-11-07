@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import upiauthorizedetails as shared_upiauthorizedetails
+from .upiauthorizedetails import UPIAuthorizeDetails
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from pg import utils
@@ -20,7 +20,7 @@ class UpiChannel(str, Enum):
 class Upi:
     channel: UpiChannel = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('channel') }})
     r"""Specify the channel through which the payment must be processed. Can be one of [\\"link\\", \\"collect\\", \\"qrcode\\"]"""
-    authorization: Optional[shared_upiauthorizedetails.UPIAuthorizeDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authorization'), 'exclude': lambda f: f is None }})
+    authorization: Optional[UPIAuthorizeDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authorization'), 'exclude': lambda f: f is None }})
     authorize_only: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authorize_only'), 'exclude': lambda f: f is None }})
     r"""For one time mandate on UPI. Set this as authorize_only = true. Please note that you can only use the \\"collect\\" channel if you are sending a one time mandate request"""
     upi_expiry_minutes: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upi_expiry_minutes'), 'exclude': lambda f: f is None }})

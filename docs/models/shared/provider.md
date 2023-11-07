@@ -1,4 +1,4 @@
-# AppProvider
+# Provider
 
 Specify the provider through which the payment must be processed.
 

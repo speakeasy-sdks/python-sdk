@@ -55,7 +55,7 @@ if res.orders_entity is not None:
 ## Available Resources and Operations
 
 
-### [orders](docs/sdks/orders/README.md)
+### [.orders](docs/sdks/orders/README.md)
 
 * [create_order](docs/sdks/orders/README.md#create_order) - Create Order
 * [order_pay](docs/sdks/orders/README.md#order_pay) - Order Pay
@@ -87,6 +87,58 @@ Here's an example of one such pagination call:
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
 
+## Example
+
+```python
+import pg
+from pg.models import callbacks, operations, shared
+
+s = pg.Pg()
+
+req = operations.CreateOrderRequest(
+    create_order_backend_request=shared.CreateOrderBackendRequest(
+        customer_details=shared.CustomerDetails(
+            customer_id='string',
+            customer_phone='string',
+        ),
+        order_amount=10.15,
+        order_currency='INR',
+        order_expiry_time='2021-07-29T00:00:00Z',
+        order_meta=shared.OrderMeta(),
+        order_note='Test order',
+        order_splits=[
+            shared.VendorSplit(),
+        ],
+        order_tags={
+            "key": 'string',
+        },
+        terminal=shared.TerminalDetails(
+            terminal_id='string',
+            terminal_phone_no='string',
+            terminal_type='string',
+        ),
+    ),
+    x_client_id='string',
+    x_client_secret='string',
+)
+
+res = None
+try:
+    res = s.orders.create_order(req)
+
+except (AuthenticationError) as e:
+    print(e) # handle exception
+except (RateLimitError) as e:
+    print(e) # handle exception
+
+except (ApiError) as e:
+    print(e) # handle exception
+
+
+if res.orders_entity is not None:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -105,13 +157,12 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import pg
 from pg.models import callbacks, operations, shared
 
 s = pg.Pg(
-    server_idx=1
+    server_idx=1,
 )
 
 req = operations.CreateOrderRequest(
@@ -153,13 +204,12 @@ if res.orders_entity is not None:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import pg
 from pg.models import callbacks, operations, shared
 
 s = pg.Pg(
-    server_url="https://sandbox.cashfree.com/pg"
+    server_url="https://sandbox.cashfree.com/pg",
 )
 
 req = operations.CreateOrderRequest(
@@ -215,8 +265,6 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = pg.Pg(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

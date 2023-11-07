@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import app as shared_app
+from .app import App
 from dataclasses_json import Undefined, dataclass_json
 from pg import utils
 
@@ -10,6 +10,6 @@ from pg import utils
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class AppPaymentMethod:
-    app: shared_app.App = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('app') }})
+    app: App = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('app') }})
     
 

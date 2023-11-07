@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import cardemi as shared_cardemi
+from .cardemi import CardEMI
 from dataclasses_json import Undefined, dataclass_json
 from pg import utils
 from typing import Optional
@@ -11,6 +11,6 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CardEMIPaymentMethod:
-    emi: Optional[shared_cardemi.CardEMI] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emi'), 'exclude': lambda f: f is None }})
+    emi: Optional[CardEMI] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emi'), 'exclude': lambda f: f is None }})
     
 

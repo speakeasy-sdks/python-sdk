@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import whcard as shared_whcard
+from .whcard import WHcard
 from dataclasses_json import Undefined, dataclass_json
 from pg import utils
 from typing import Optional
@@ -11,6 +11,6 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class WHpaymentMethod:
-    card: Optional[shared_whcard.WHcard] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('card'), 'exclude': lambda f: f is None }})
+    card: Optional[WHcard] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('card'), 'exclude': lambda f: f is None }})
     
 

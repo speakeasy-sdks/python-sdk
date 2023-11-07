@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import netbanking as shared_netbanking
+from .netbanking import Netbanking
 from dataclasses_json import Undefined, dataclass_json
 from pg import utils
 
@@ -10,6 +10,6 @@ from pg import utils
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class NetBankingPaymentMethod:
-    netbanking: shared_netbanking.Netbanking = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('netbanking') }})
+    netbanking: Netbanking = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('netbanking') }})
     
 

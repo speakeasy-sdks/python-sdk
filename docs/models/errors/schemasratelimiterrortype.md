@@ -1,4 +1,4 @@
-# RateLimitErrorType
+# SchemasRateLimitErrorType
 
 rate_limit_error
 

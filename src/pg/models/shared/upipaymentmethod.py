@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import upi as shared_upi
+from .upi import Upi
 from dataclasses_json import Undefined, dataclass_json
 from pg import utils
 
@@ -10,6 +10,6 @@ from pg import utils
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class UPIPaymentMethod:
-    upi: shared_upi.Upi = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upi') }})
+    upi: Upi = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upi') }})
     
 

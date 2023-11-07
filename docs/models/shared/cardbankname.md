@@ -1,4 +1,4 @@
-# CardCardBankName
+# CardBankName
 
 One of ["Kotak", "ICICI", "RBL", "BOB", "Standard Chartered"]. Card bank name, required for EMI payments. This is the bank user has selected for EMI
 

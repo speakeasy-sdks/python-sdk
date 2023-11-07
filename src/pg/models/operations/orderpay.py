@@ -3,11 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import apierror as shared_apierror
-from ..shared import errorresponse as shared_errorresponse
-from ..shared import orderpayrequest as shared_orderpayrequest
-from ..shared import orderpayresponse as shared_orderpayresponse
-from ..shared import ratelimiterror as shared_ratelimiterror
+from ...models.shared import errorresponse as shared_errorresponse
+from ...models.shared import orderpayrequest as shared_orderpayrequest
+from ...models.shared import orderpayresponse as shared_orderpayresponse
 from typing import Dict, List, Optional
 
 
@@ -25,15 +23,11 @@ class OrderPayResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    api_error: Optional[shared_apierror.APIError] = dataclasses.field(default=None)
-    r"""API related Errors"""
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
     r"""Any bad or invalid request will lead to following error object"""
     headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
     order_pay_response: Optional[shared_orderpayresponse.OrderPayResponse] = dataclasses.field(default=None)
     r"""OK"""
-    rate_limit_error: Optional[shared_ratelimiterror.RateLimitError] = dataclasses.field(default=None)
-    r"""Either ports issue or too many requests"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

@@ -1,4 +1,4 @@
-# OrderPayResponseAction
+# Action
 
 One of ["link", "custom", "form"]
 

@@ -7,17 +7,20 @@ from enum import Enum
 from pg import utils
 from typing import Optional
 
-class APIErrorType(str, Enum):
+class Type(str, Enum):
     r"""api_error"""
     API_ERROR = 'api_error'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
-class APIError:
+class APIError(Exception):
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    type: Optional[APIErrorType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[Type] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""api_error"""
     
 
+    def __str__(self) -> str:
+        return utils.marshal_json(self)

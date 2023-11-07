@@ -6,7 +6,7 @@ from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from pg import utils
 
-class AppProvider(str, Enum):
+class Provider(str, Enum):
     r"""Specify the provider through which the payment must be processed."""
     GPAY = 'gpay'
     PHONEPE = 'phonepe'
@@ -26,7 +26,7 @@ class App:
     r"""Specify the channel through which the payment must be processed."""
     phone: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone') }})
     r"""Customer phone number associated with a wallet for payment."""
-    provider: AppProvider = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provider') }})
+    provider: Provider = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provider') }})
     r"""Specify the provider through which the payment must be processed."""
     
 
