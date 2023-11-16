@@ -1,6 +1,4 @@
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import pg
 from pg.models import callbacks, operations, shared
