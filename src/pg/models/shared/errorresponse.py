@@ -7,7 +7,7 @@ from enum import Enum
 from pg import utils
 from typing import Optional
 
-class ErrorResponseType(str, Enum):
+class Type(str, Enum):
     r"""One of [\\"invalid_request_error\\", \\"authentication_error\\", \\"rate_limit_error\\", \\"validation_error\\", \\"api_error\\"]"""
     INVALID_REQUEST_ERROR = 'invalid_request_error'
     AUTHENTICATION_ERROR = 'authentication_error'
@@ -21,7 +21,7 @@ class ErrorResponseType(str, Enum):
 class ErrorResponse:
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    type: Optional[ErrorResponseType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[Type] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""One of [\\"invalid_request_error\\", \\"authentication_error\\", \\"rate_limit_error\\", \\"validation_error\\", \\"api_error\\"]"""
     
 

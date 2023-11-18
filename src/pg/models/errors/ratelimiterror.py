@@ -16,6 +16,7 @@ class SchemasRateLimitErrorType(str, Enum):
 
 @dataclasses.dataclass
 class RateLimitError(Exception):
+    r"""Either ports issue or too many requests"""
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     type: Optional[SchemasRateLimitErrorType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})

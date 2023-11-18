@@ -8,6 +8,7 @@ src/pg/utils/__init__.py
 src/pg/utils/retries.py
 src/pg/utils/utils.py
 src/pg/models/errors/sdkerror.py
+tests/helpers.py
 src/pg/models/operations/createorder.py
 src/pg/models/operations/orderpay.py
 src/pg/models/shared/ordersentity.py
@@ -65,7 +66,7 @@ docs/models/shared/refundurlobject.md
 docs/models/shared/paymenturlobject.md
 docs/models/shared/ordermeta.md
 docs/models/shared/customerdetails.md
-docs/models/shared/errorresponsetype.md
+docs/models/shared/type.md
 docs/models/shared/errorresponse.md
 docs/models/shared/createorderbackendrequest.md
 docs/models/shared/terminaldetails.md

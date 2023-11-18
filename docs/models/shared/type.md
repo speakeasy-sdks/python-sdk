@@ -1,4 +1,4 @@
-# ErrorResponseType
+# Type
 
 One of ["invalid_request_error", "authentication_error", "rate_limit_error", "validation_error", "api_error"]
 
