@@ -1,4 +1,4 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import pg
 from pg.models import callbacks, operations, shared
@@ -20,7 +20,7 @@ req = operations.CreateOrderRequest(
             shared.VendorSplit(),
         ],
         order_tags={
-            "key": 'string',
+            'key': 'string',
         },
         terminal=shared.TerminalDetails(
             terminal_id='string',
@@ -38,4 +38,4 @@ if res.orders_entity is not None:
     # handle response
     pass
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

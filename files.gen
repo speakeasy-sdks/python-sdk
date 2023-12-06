@@ -55,7 +55,6 @@ src/pg/models/errors/__init__.py
 src/pg/models/operations/__init__.py
 src/pg/models/shared/__init__.py
 src/pg/models/callbacks/__init__.py
-USAGE.md
 docs/models/operations/createorderrequest.md
 docs/models/operations/createorderresponse.md
 docs/models/operations/orderpayrequest.md
@@ -117,4 +116,5 @@ docs/models/errors/apierror.md
 docs/models/callbacks/createorderpaymentwebhookresponse.md
 docs/sdks/pg/README.md
 docs/sdks/orders/README.md
+USAGE.md
 .gitattributes

@@ -33,7 +33,7 @@ req = operations.CreateOrderRequest(
             shared.VendorSplit(),
         ],
         order_tags={
-            "key": 'string',
+            'key': 'string',
         },
         terminal=shared.TerminalDetails(
             terminal_id='string',
