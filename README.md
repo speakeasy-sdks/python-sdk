@@ -20,6 +20,8 @@ from pg.models import callbacks, operations, shared
 s = pg.Pg()
 
 req = operations.CreateOrderRequest(
+    x_client_id='string',
+    x_client_secret='string',
     create_order_backend_request=shared.CreateOrderBackendRequest(
         customer_details=shared.CustomerDetails(
             customer_id='string',
@@ -42,8 +44,6 @@ req = operations.CreateOrderRequest(
             terminal_type='string',
         ),
     ),
-    x_client_id='string',
-    x_client_secret='string',
 )
 
 res = s.orders.create_order(req)
@@ -90,6 +90,8 @@ from pg.models import callbacks, operations, shared
 s = pg.Pg()
 
 req = operations.CreateOrderRequest(
+    x_client_id='string',
+    x_client_secret='string',
     create_order_backend_request=shared.CreateOrderBackendRequest(
         customer_details=shared.CustomerDetails(
             customer_id='string',
@@ -112,8 +114,6 @@ req = operations.CreateOrderRequest(
             terminal_type='string',
         ),
     ),
-    x_client_id='string',
-    x_client_secret='string',
 )
 
 res = None
@@ -163,6 +163,8 @@ s = pg.Pg(
 )
 
 req = operations.CreateOrderRequest(
+    x_client_id='string',
+    x_client_secret='string',
     create_order_backend_request=shared.CreateOrderBackendRequest(
         customer_details=shared.CustomerDetails(
             customer_id='string',
@@ -185,8 +187,6 @@ req = operations.CreateOrderRequest(
             terminal_type='string',
         ),
     ),
-    x_client_id='string',
-    x_client_secret='string',
 )
 
 res = s.orders.create_order(req)
@@ -209,6 +209,8 @@ s = pg.Pg(
 )
 
 req = operations.CreateOrderRequest(
+    x_client_id='string',
+    x_client_secret='string',
     create_order_backend_request=shared.CreateOrderBackendRequest(
         customer_details=shared.CustomerDetails(
             customer_id='string',
@@ -231,8 +233,6 @@ req = operations.CreateOrderRequest(
             terminal_type='string',
         ),
     ),
-    x_client_id='string',
-    x_client_secret='string',
 )
 
 res = s.orders.create_order(req)
