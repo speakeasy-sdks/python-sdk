@@ -33,7 +33,8 @@ class OrderPayResponsePaymentMethod(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class OrderPayResponse:
-    action: Optional[Action] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    action: Optional[Action] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action'), 'exclude': lambda f: f is OrderPayResponse.UNSET }})
     r"""One of [\\"link\\", \\"custom\\", \\"form\\"]"""
     cf_payment_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cf_payment_id'), 'exclude': lambda f: f is None }})
     r"""Payment identifier created by Cashfree"""

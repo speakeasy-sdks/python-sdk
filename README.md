@@ -15,35 +15,13 @@ pip install git+https://github.com/speakeasy-sdks/python-sdk.git
 
 ```python
 import pg
-from pg.models import callbacks, operations, shared
+from pg.models import operations
 
 s = pg.Pg()
 
 req = operations.CreateOrderRequest(
     x_client_id='string',
     x_client_secret='string',
-    create_order_backend_request=shared.CreateOrderBackendRequest(
-        customer_details=shared.CustomerDetails(
-            customer_id='string',
-            customer_phone='string',
-        ),
-        order_amount=10.15,
-        order_currency='INR',
-        order_expiry_time='2021-07-29T00:00:00Z',
-        order_meta=shared.OrderMeta(),
-        order_note='Test order',
-        order_splits=[
-            shared.VendorSplit(),
-        ],
-        order_tags={
-            'key': 'string',
-        },
-        terminal=shared.TerminalDetails(
-            terminal_id='string',
-            terminal_phone_no='string',
-            terminal_type='string',
-        ),
-    ),
 )
 
 res = s.orders.create_order(req)
@@ -85,51 +63,29 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import pg
-from pg.models import callbacks, operations, shared
+from pg.models import errors, operations
 
 s = pg.Pg()
 
 req = operations.CreateOrderRequest(
     x_client_id='string',
     x_client_secret='string',
-    create_order_backend_request=shared.CreateOrderBackendRequest(
-        customer_details=shared.CustomerDetails(
-            customer_id='string',
-            customer_phone='string',
-        ),
-        order_amount=10.15,
-        order_currency='INR',
-        order_expiry_time='2021-07-29T00:00:00Z',
-        order_meta=shared.OrderMeta(),
-        order_note='Test order',
-        order_splits=[
-            shared.VendorSplit(),
-        ],
-        order_tags={
-            'key': 'string',
-        },
-        terminal=shared.TerminalDetails(
-            terminal_id='string',
-            terminal_phone_no='string',
-            terminal_type='string',
-        ),
-    ),
 )
 
 res = None
 try:
     res = s.orders.create_order(req)
 except errors.AuthenticationError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 except errors.RateLimitError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 except errors.APIError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.orders_entity is not None:
@@ -156,7 +112,7 @@ You can override the default server globally by passing a server index to the `s
 
 ```python
 import pg
-from pg.models import callbacks, operations, shared
+from pg.models import operations
 
 s = pg.Pg(
     server_idx=1,
@@ -165,28 +121,6 @@ s = pg.Pg(
 req = operations.CreateOrderRequest(
     x_client_id='string',
     x_client_secret='string',
-    create_order_backend_request=shared.CreateOrderBackendRequest(
-        customer_details=shared.CustomerDetails(
-            customer_id='string',
-            customer_phone='string',
-        ),
-        order_amount=10.15,
-        order_currency='INR',
-        order_expiry_time='2021-07-29T00:00:00Z',
-        order_meta=shared.OrderMeta(),
-        order_note='Test order',
-        order_splits=[
-            shared.VendorSplit(),
-        ],
-        order_tags={
-            'key': 'string',
-        },
-        terminal=shared.TerminalDetails(
-            terminal_id='string',
-            terminal_phone_no='string',
-            terminal_type='string',
-        ),
-    ),
 )
 
 res = s.orders.create_order(req)
@@ -202,7 +136,7 @@ if res.orders_entity is not None:
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
 import pg
-from pg.models import callbacks, operations, shared
+from pg.models import operations
 
 s = pg.Pg(
     server_url="https://sandbox.cashfree.com/pg",
@@ -211,28 +145,6 @@ s = pg.Pg(
 req = operations.CreateOrderRequest(
     x_client_id='string',
     x_client_secret='string',
-    create_order_backend_request=shared.CreateOrderBackendRequest(
-        customer_details=shared.CustomerDetails(
-            customer_id='string',
-            customer_phone='string',
-        ),
-        order_amount=10.15,
-        order_currency='INR',
-        order_expiry_time='2021-07-29T00:00:00Z',
-        order_meta=shared.OrderMeta(),
-        order_note='Test order',
-        order_splits=[
-            shared.VendorSplit(),
-        ],
-        order_tags={
-            'key': 'string',
-        },
-        terminal=shared.TerminalDetails(
-            terminal_id='string',
-            terminal_phone_no='string',
-            terminal_type='string',
-        ),
-    ),
 )
 
 res = s.orders.create_order(req)
