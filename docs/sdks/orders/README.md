@@ -19,8 +19,8 @@ from pg.models import operations
 s = pg.Pg()
 
 req = operations.CreateOrderRequest(
-    x_client_id='string',
-    x_client_secret='string',
+    x_client_id='<value>',
+    x_client_secret='<value>',
 )
 
 res = s.orders.create_order(req)
@@ -62,7 +62,7 @@ from pg.models import operations
 s = pg.Pg()
 
 req = operations.OrderPayRequest(
-    x_api_version='string',
+    x_api_version='<value>',
 )
 
 res = s.orders.order_pay(req)
