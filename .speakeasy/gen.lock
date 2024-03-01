@@ -4,16 +4,17 @@ management:
   docChecksum: af06384e525f01026fc7dc59efb1b4ca
   docVersion: "2022-09-01"
   speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 5.0.2
-  configChecksum: a29556533e3d19a1f1a5cbfa9707c043
+  generationVersion: 2.275.4
+  releaseVersion: 5.1.0
+  configChecksum: 393bb15d69e482742336d66564fc6b76
   repoURL: https://github.com/speakeasy-sdks/python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/python-sdk.git
 features:
   python:
+    callbacks: 1.0.0
     constsAndDefaults: 0.1.2
-    core: 4.4.7
+    core: 4.5.0
     globalServerURLs: 2.82.1
     unions: 2.82.5
 generatedFiles:
@@ -137,3 +138,6 @@ generatedFiles:
   - docs/sdks/orders/README.md
   - USAGE.md
   - .gitattributes
+  - src/pg/_hooks/sdkhooks.py
+  - src/pg/_hooks/types.py
+  - src/pg/_hooks/__init__.py
